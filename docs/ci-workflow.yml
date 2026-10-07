@@ -1,0 +1,38 @@
+# GitHub Actions CI for Tether.
+#
+# NOTE: GitHub does not allow creating workflow files through the API with a
+# token that lacks the `workflow` scope. To enable CI, add this file via the
+# GitHub web UI at:  .github/workflows/build.yml
+# (Repo → Add file → Create new file, paste the content below, commit.)
+#
+# It builds the macOS app on every push using a macOS runner with Xcode.
+
+name: Build macOS app
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app
+
+      - name: Generate Xcode project
+        run: python3 generate_project.py
+
+      - name: Build (Debug)
+        run: >
+          xcodebuild
+          -project Tether.xcodeproj
+          -scheme Tether
+          -configuration Debug
+          -destination 'platform=macOS'
+          build
+          CODE_SIGNING_ALLOWED=NO

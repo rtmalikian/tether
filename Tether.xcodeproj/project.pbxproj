@@ -1,0 +1,146 @@
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE1A05E1F53A4E5EA433F13B = {isa = PBXBuildFile; fileRef = 8AB318F4CCB145BFBD9EC836; };
+		ED930EF3FF6443FE94731EBF = {isa = PBXBuildFile; fileRef = FAB01C68EE9E466C9BE00F33; };
+		1EB375D612724D8F8C069DB2 = {isa = PBXBuildFile; fileRef = B669A5D36D1F4865B020AC3A; };
+		267C172499DF469BB5AD260A = {isa = PBXBuildFile; fileRef = 73418FDBFFE7493985C42E76; };
+		E397F7A0E9D6489ABB3B64D4 = {isa = PBXBuildFile; fileRef = BC898438F65D4AF098730D14; };
+		032BC722AE2A48D7BD54A61A = {isa = PBXBuildFile; fileRef = CCA912D442B04C88A50906BD; };
+		97D77E08F0B74EEA86C2ABD7 = {isa = PBXBuildFile; fileRef = 7B999599DFD34B3F9FA56F13; };
+		320FF7D116C144A7816A7441 = {isa = PBXBuildFile; fileRef = D2CC5DAC676248D3B391C490; };
+		AA46D706795748C7B4EA4141 = {isa = PBXBuildFile; fileRef = EE88D5A970C2478B843CB5F5; };
+		1A94A0A46F3641228C08B092 = {isa = PBXBuildFile; fileRef = 87D2A375A71D4C34BDF75333; };
+		7EC656C325544538B41C9D90 = {isa = PBXBuildFile; fileRef = 9E25F3355FD640708B9E0199; };
+		037ABF9337A0437686F46EC0 = {isa = PBXBuildFile; fileRef = 0AE5011FDAB7400ABEA30C96; };
+		EDDD9F5347C74538ACF3A825 = {isa = PBXBuildFile; fileRef = C5E7239E70424C05990CDDEE; };
+		686ADF0F061C4B7CB164A6B2 = {isa = PBXBuildFile; fileRef = 456B822A9C58489BB720CA3C; };
+		733BE9F302BE46A98C29883F = {isa = PBXBuildFile; fileRef = 29FC1017CEB3469CA76997E8; };
+		DE097C3F8D474587A9090812 = {isa = PBXBuildFile; fileRef = 42EEACB47455449E892F8C2C; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8AB318F4CCB145BFBD9EC836 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetherApp.swift; sourceTree = "<group>"; };
+		FAB01C68EE9E466C9BE00F33 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		B669A5D36D1F4865B020AC3A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		73418FDBFFE7493985C42E76 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		BC898438F65D4AF098730D14 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakEngine.swift; sourceTree = "<group>"; };
+		CCA912D442B04C88A50906BD = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroEngine.swift; sourceTree = "<group>"; };
+		7B999599DFD34B3F9FA56F13 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageMonitor.swift; sourceTree = "<group>"; };
+		D2CC5DAC676248D3B391C490 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyManager.swift; sourceTree = "<group>"; };
+		EE88D5A970C2478B843CB5F5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackStore.swift; sourceTree = "<group>"; };
+		87D2A375A71D4C34BDF75333 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakOverlay.swift; sourceTree = "<group>"; };
+		9E25F3355FD640708B9E0199 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		0AE5011FDAB7400ABEA30C96 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		C5E7239E70424C05990CDDEE = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroView.swift; sourceTree = "<group>"; };
+		456B822A9C58489BB720CA3C = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyView.swift; sourceTree = "<group>"; };
+		29FC1017CEB3469CA76997E8 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErgonomicsView.swift; sourceTree = "<group>"; };
+		42EEACB47455449E892F8C2C = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		17027469D8EF484796D2F8E0 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30A70E6F777A4A348E11EC2E = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tether.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B724776024B547CDBB565821 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2ECD2D04BE124ABBB7119834 = {isa = PBXGroup; children = (55918EDC3719465D9C92D434, B1D4ACC7F1E4466C833C1B2D); sourceTree = "<group>"; };
+		55918EDC3719465D9C92D434 = {isa = PBXGroup; children = (8AB318F4CCB145BFBD9EC836, FAB01C68EE9E466C9BE00F33, B669A5D36D1F4865B020AC3A, 73418FDBFFE7493985C42E76, BC898438F65D4AF098730D14, CCA912D442B04C88A50906BD, 7B999599DFD34B3F9FA56F13, D2CC5DAC676248D3B391C490, EE88D5A970C2478B843CB5F5, 87D2A375A71D4C34BDF75333, F5E67833ABCA406B859C7B83, 17027469D8EF484796D2F8E0); path = Tether; sourceTree = "<group>"; };
+		F5E67833ABCA406B859C7B83 = {isa = PBXGroup; children = (9E25F3355FD640708B9E0199, 0AE5011FDAB7400ABEA30C96, C5E7239E70424C05990CDDEE, 456B822A9C58489BB720CA3C, 29FC1017CEB3469CA76997E8, 42EEACB47455449E892F8C2C); path = Views; sourceTree = "<group>"; };
+		B1D4ACC7F1E4466C833C1B2D = {isa = PBXGroup; children = (30A70E6F777A4A348E11EC2E); name = Products; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		444ABE6F636B46DBAD547217 = {isa = PBXNativeTarget; buildConfigurationList = 8584038205A34BF08B58B318; buildPhases = (79B6A93C52604EE7B4B00810, B724776024B547CDBB565821, A6E6AC6609DC45919EC9589D); buildRules = (); dependencies = (); name = Tether; productName = Tether; productReference = 30A70E6F777A4A348E11EC2E; productType = "com.apple.product-type.application"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9BD366C48FB14E549C451273 = {isa = PBXProject; attributes = {LastUpgradeCheck = 1500; TargetAttributes = {444ABE6F636B46DBAD547217 = {CreatedOnToolsVersion = 15.0;};};}; buildConfigurationList = 1614371EFDF34725BB3DF39E; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en); mainGroup = 2ECD2D04BE124ABBB7119834; productRefGroup = B1D4ACC7F1E4466C833C1B2D; projectDirPath = ""; projectRoot = ""; targets = (444ABE6F636B46DBAD547217); };
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		79B6A93C52604EE7B4B00810 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (DE1A05E1F53A4E5EA433F13B, ED930EF3FF6443FE94731EBF, 1EB375D612724D8F8C069DB2, 267C172499DF469BB5AD260A, E397F7A0E9D6489ABB3B64D4, 032BC722AE2A48D7BD54A61A, 97D77E08F0B74EEA86C2ABD7, 320FF7D116C144A7816A7441, AA46D706795748C7B4EA4141, 1A94A0A46F3641228C08B092, 7EC656C325544538B41C9D90, 037ABF9337A0437686F46EC0, EDDD9F5347C74538ACF3A825, 686ADF0F061C4B7CB164A6B2, 733BE9F302BE46A98C29883F, DE097C3F8D474587A9090812); runOnlyForDeploymentPostprocessing = 0; };
+		B724776024B547CDBB565821 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		A6E6AC6609DC45919EC9589D = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A777E78270734F7BA05BDEB1 = {isa = XCBuildConfiguration; buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				MTL_FAST_MATH = YES;
+			}; name = Debug; };
+		484F05EF67E04FF78A5BF4A4 = {isa = XCBuildConfiguration; buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				MTL_FAST_MATH = YES;
+			}; name = Release; };
+		39BD4A14401F4021BBCE6A9D = {isa = XCBuildConfiguration; buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Tether/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = ("@executable_path/../Frameworks");
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rtmalikian.tether;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			}; name = Debug; };
+		25767E1DB73F4C3F81A02ED0 = {isa = XCBuildConfiguration; buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Tether/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = ("@executable_path/../Frameworks");
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rtmalikian.tether;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			}; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1614371EFDF34725BB3DF39E = {isa = XCConfigurationList; buildConfigurations = (A777E78270734F7BA05BDEB1, 484F05EF67E04FF78A5BF4A4); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		8584038205A34BF08B58B318 = {isa = XCConfigurationList; buildConfigurations = (39BD4A14401F4021BBCE6A9D, 25767E1DB73F4C3F81A02ED0); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = 9BD366C48FB14E549C451273;
+}
