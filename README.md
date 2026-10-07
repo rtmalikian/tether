@@ -100,9 +100,13 @@ On first launch, Tether asks for:
 
 ## 🗺️ Roadmap
 
+Tether is just getting started. Big-picture direction:
+
 - **v1.1** — HealthKit sleep correlation, weekly reflection card, commitment mode (24-h delay before disabling), streak-free design review.
 - **v2 — global mesh** — opt-in cloud pulse showing how many people worldwide are on a break right now. Needs a backend host decision and privacy review; the `BuddySyncProvider` seam in the code is where it plugs in.
 - **Later** — iOS companion (Screen Time API), more languages, opt-in anonymized research data donation (consent-first).
+
+Concrete improvements are tracked as [GitHub issues](https://github.com/rtmalikian/tether/issues) — adaptive break cadence, calendar-aware breaks, Focus-mode integration, rotating break activities, snooze-with-reason, weekly reports, desktop widgets & Shortcuts, Sparkle auto-updates, accessibility pass, localization, buddy challenges, nudge consent controls, international crisis resources, and engine unit tests. Grab one and build it.
 
 ## ❓ FAQ
 
