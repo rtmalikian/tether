@@ -129,6 +129,9 @@ Yes — the Ergonomics tab covers screen distance and height, chair and posture,
 **How does the eye tracking work?**
 Your webcam + Apple's on-device Vision framework detect face landmarks and measure blink rate from how the eye opening changes — no video is stored or sent anywhere, and it never starts without you tapping "Start eye tracking." True gaze-path tracking would need dedicated hardware; blink rate is the validated dry-eye signal a webcam can actually measure.
 
+**What happens when my Mac sleeps or wakes?**
+Sleep pauses everything: an active Pomodoro sprint pauses on sleep, and waking resets all break timers — you'll never be nagged to take a break the moment you come back. (Thanks @y_chiboub for the suggestion!)
+
 **Is my data sent anywhere?**
 No. Everything stays on your Mac. Buddy discovery uses your local Wi-Fi only.
 

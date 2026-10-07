@@ -1,4 +1,5 @@
 import Foundation
+import AppKit
 import CoreGraphics
 import Combine
 
@@ -37,6 +38,7 @@ final class BreakEngine: ObservableObject {
     private var continuousNudged = false
     private var nonstopStreak = 0
     private var nonstopNudged = false
+    private var wakeObserver: NSObjectProtocol?
 
     init() {
         settings = Store.load("settings", default: AppSettings())
@@ -47,6 +49,12 @@ final class BreakEngine: ObservableObject {
         longestNonstopToday = Store.load("nonstop-\(todayKey())", default: 0)
         eyeBreakIn = settings.eyeBreakMinutes * 60
         movementBreakIn = settings.movementBreakMinutes * 60
+        // If the Mac wakes from sleep, the user just came back — reset the
+        // break timers instead of nagging them the moment they return.
+        // (Suggested by Yassine @y_chiboub.)
+        wakeObserver = NSWorkspace.shared.notificationCenter.addObserver(
+            forName: NSWorkspace.didWakeNotification, object: nil, queue: .main
+        ) { [weak self] _ in self?.handleWake() }
         start()
     }
 
@@ -163,6 +171,18 @@ final class BreakEngine: ObservableObject {
         events.append(BreakEvent(date: Date(), kind: kind,
                                  completed: completed, durationSeconds: seconds))
         Store.save(events, as: "events")
+    }
+
+    /// The Mac just woke from sleep: the user is back. Reset every break
+    /// timer so Tether never nags someone to step away the moment they've
+    /// returned. (Daily totals like activeSecondsToday are left alone —
+    /// they're still valid.)
+    private func handleWake() {
+        eyeAccum = 0
+        moveAccum = 0
+        nonstopStreak = 0
+        nonstopNudged = false
+        refreshCountdowns()
     }
 
     private func rollDayIfNeeded() {

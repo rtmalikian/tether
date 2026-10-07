@@ -1,4 +1,5 @@
 import Foundation
+import AppKit
 import Combine
 
 /// Classic Pomodoro technique: focused work sprints separated by real breaks.
@@ -32,6 +33,15 @@ final class PomodoroEngine: ObservableObject {
     }
 
     private var timer: Timer?
+    private var sleepObserver: NSObjectProtocol?
+
+    init() {
+        // A focus sprint shouldn't silently run while the Mac sleeps —
+        // pause it; the user resumes on wake.
+        sleepObserver = NSWorkspace.shared.notificationCenter.addObserver(
+            forName: NSWorkspace.willSleepNotification, object: nil, queue: .main
+        ) { [weak self] _ in self?.pause() }
+    }
 
     var menuLabel: String {
         phase == .idle ? "Pomodoro" : "\(phase.label) \(fmt(remaining))"
