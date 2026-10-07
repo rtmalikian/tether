@@ -19,6 +19,8 @@ struct SettingsView: View {
                         value: binding(\.movementBreakMinutes), in: 20...120, step: 10)
                 Stepper("Nudge after \(breaks.settings.continuousNudgeMinutes) min continuous use",
                         value: binding(\.continuousNudgeMinutes), in: 30...180, step: 15)
+                Stepper("Nudge after \(breaks.settings.nonstopNudgeMinutes) min of non-stop typing/clicking",
+                        value: binding(\.nonstopNudgeMinutes), in: 20...120, step: 5)
             }
 
             Section("Pomodoro") {
@@ -41,7 +43,7 @@ struct SettingsView: View {
             }
 
             Section("AI usage awareness (optional)") {
-                Toggle("Monitor time in AI apps", isOn: $usage.enabled)
+                Toggle("Monitor time in AI & coding tools", isOn: $usage.enabled)
                 if usage.enabled && !usage.permissionGranted {
                     Button("Grant Accessibility permission") { usage.requestTrust() }
                     Text("Tether reads the frontmost app's name only — never what you type. Grant access in System Settings → Privacy & Security → Accessibility.")

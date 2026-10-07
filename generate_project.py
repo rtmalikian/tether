@@ -16,6 +16,7 @@ SOURCES = [
     "Tether/BreakEngine.swift",
     "Tether/PomodoroEngine.swift",
     "Tether/UsageMonitor.swift",
+    "Tether/EyeMonitor.swift",
     "Tether/BuddyManager.swift",
     "Tether/FeedbackStore.swift",
     "Tether/BreakOverlay.swift",

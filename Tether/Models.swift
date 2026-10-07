@@ -61,6 +61,9 @@ struct AppSettings: Codable {
     var movementBreakMinutes = 30
     var movementBreakSeconds = 300
     var continuousNudgeMinutes = 90
+    // Non-stop input streak: typing/clicking with no real pause. Distinct from
+    // total active time — this catches the "haven't lifted my hands" pattern.
+    var nonstopNudgeMinutes = 45
     var enableUsageMonitor = false
     var enableBuddyDiscovery = true
     var buddyDisplayName = "Tether User"

@@ -7,6 +7,7 @@ struct TetherApp: App {
     @StateObject private var buddies = BuddyManager()
     @StateObject private var feedback = FeedbackStore()
     @StateObject private var usage = UsageMonitor()
+    @StateObject private var eyes = EyeMonitor()
 
     init() {
         Notifications.requestAuthorization()
@@ -20,6 +21,7 @@ struct TetherApp: App {
                 .environmentObject(buddies)
                 .environmentObject(feedback)
                 .environmentObject(usage)
+                .environmentObject(eyes)
         }
         .menuBarExtraStyle(.window)
 
@@ -30,6 +32,7 @@ struct TetherApp: App {
                 .environmentObject(buddies)
                 .environmentObject(feedback)
                 .environmentObject(usage)
+                .environmentObject(eyes)
         }
         .defaultSize(width: 760, height: 560)
 

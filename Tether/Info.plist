@@ -33,6 +33,8 @@
 	<true/>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>Tether discovers accountability buddies on your local network so you can take breaks together. No data leaves your network.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Tether can optionally measure your blink rate with the camera — fully on-device, no video is stored or sent anywhere — to warn you when your eyes are drying out.</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>

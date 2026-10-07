@@ -26,11 +26,14 @@ Buddies find each other automatically over your local Wi-Fi. See when a buddy st
 ### 🌱 Community pulse (the mesh)
 See how many of your buddies are on a break **right now** — a gentle social nudge. We're honest about the evidence: a large 2025 meta-analysis found social-norms messaging effects vanish after publication-bias adjustment, so we treat the pulse as motivation design, not medicine. A global opt-in pulse (how many people worldwide are breaking right now) is on the roadmap — labeled "coming soon" until the privacy-preserving backend exists.
 
+### 👁️ Blink-rate eye tracking (webcam, 100% on-device)
+True gaze tracking needs dedicated hardware — but the validated eye-strain signal a webcam *can* measure is **blink rate**: relaxed blinking runs ~15–20/min and collapses to ~4–7/min during screen use, driving dry eye (reviews: [PMC6020759](https://pmc.ncbi.nlm.nih.gov/articles/PMC6020759/), [PMC9434525](https://pmc.ncbi.nlm.nih.gov/articles/PMC9434525/)). Tether optionally watches your blink rate with the camera — Apple's Vision framework, on-device, no video stored or transmitted — and nudges you when it stays low. Off by default and never auto-starts; the green camera light stays on while tracking.
+
 ### 📊 Feedback loops
 A 2-tap daily check-in ("Did breaks help your focus today? How balanced did your day feel?") plus 7-day trends for focus and balance. The app shows you whether it's actually helping — no vanity metrics.
 
-### 🧠 Optional AI-usage awareness
-With your explicit Accessibility permission, Tether can note time spent in AI chat apps (frontmost app name only — **never** message contents, never keystrokes) and surface a gentle pattern card. Off by default.
+### 🧠 Optional AI & coding-tool usage awareness
+With your explicit Accessibility permission, Tether can note time spent in AI assistants and AI coding tools — ChatGPT, Claude, Gemini, **Codex, OpenCode, Claude Code, Cursor, Windsurf**, Copilot, Aider, and more (frontmost app name only — **never** message contents, never keystrokes) — plus a separate nudge when you've been typing/clicking **non-stop** without a real pause. Off by default.
 
 ## 🔬 The science behind Tether
 
@@ -44,6 +47,7 @@ Every default in Tether maps to published evidence. We prioritize **randomized c
 - **Talens-Estarelles et al. 2023** (Contact Lens & Anterior Eye) — field study (N=29 symptomatic computer users, webcam-verified reminders): 20-20-20 reminders significantly reduced digital eye strain and dry-eye symptoms — but gains faded a week after stopping, so the reminder needs to be a habit, not a one-off. https://pubmed.ncbi.nlm.nih.gov/35963776/
 - **Redondo et al. 2025** (Experimental Eye Research) — repeated-measures experiment (N=24): breaks every 10 minutes or self-paced reduced eye irritation better than the rigid 20-20-20 schedule. → *Tether lets you shorten the interval.*
 - **Singh et al. 2022** (Ophthalmology) — meta-analysis of 45 RCTs (N=4,497): no high-certainty evidence for any computer-vision-syndrome intervention yet; the break-based RCT base is limited. Honest caveat, included deliberately.
+- **Blink-rate collapse:** relaxed blinking (~15–20/min) falls to ~4–7/min during display use (Tsubota & Nakamori; Patel et al., via reviews [PMC6020759](https://pmc.ncbi.nlm.nih.gov/articles/PMC6020759/) and [PMC9434525](https://pmc.ncbi.nlm.nih.gov/articles/PMC9434525/)); lower blink rates correlate directly with computer-vision-syndrome scores (r = −0.78, [PMC10001854](https://pmc.ncbi.nlm.nih.gov/articles/PMC10001854/)). → *This is the signal the webcam blink-rate monitor watches.*
 - **Guidelines:** The **American Academy of Ophthalmology** recommends the 20-20-20 rule; the **American Optometric Association** adds a 15-minute break per 2 hours of device use. https://www.aao.org/eye-health/tips-prevention/should-you-be-worried-about-blue-light
 
 ### 3. Timed work intervals → the Pomodoro timer
@@ -121,6 +125,9 @@ Yes — 25/5 by default with a long break every 4 sprints, all configurable. (He
 
 **Does Tether help with desk ergonomics?**
 Yes — the Ergonomics tab covers screen distance and height, chair and posture, keyboard and wrist position, lighting, and break cadence, with a setup checklist. (Not medical advice — see a clinician for persistent pain.)
+
+**How does the eye tracking work?**
+Your webcam + Apple's on-device Vision framework detect face landmarks and measure blink rate from how the eye opening changes — no video is stored or sent anywhere, and it never starts without you tapping "Start eye tracking." True gaze-path tracking would need dedicated hardware; blink rate is the validated dry-eye signal a webcam can actually measure.
 
 **Is my data sent anywhere?**
 No. Everything stays on your Mac. Buddy discovery uses your local Wi-Fi only.

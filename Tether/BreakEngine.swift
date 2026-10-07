@@ -27,12 +27,16 @@ final class BreakEngine: ObservableObject {
     @Published private(set) var eyeBreakIn = 20 * 60
     @Published private(set) var movementBreakIn = 60 * 60
     @Published private(set) var events: [BreakEvent] = []
+    /// Longest streak of typing/clicking with no real pause, today (seconds).
+    @Published private(set) var longestNonstopToday = 0
 
     private var timer: Timer?
     private var day = todayKey()
     private var eyeAccum = 0
     private var moveAccum = 0
     private var continuousNudged = false
+    private var nonstopStreak = 0
+    private var nonstopNudged = false
 
     init() {
         settings = Store.load("settings", default: AppSettings())
@@ -40,6 +44,7 @@ final class BreakEngine: ObservableObject {
             Calendar.current.isDateInToday($0.date)
         }
         activeSecondsToday = Store.load("active-\(todayKey())", default: 0)
+        longestNonstopToday = Store.load("nonstop-\(todayKey())", default: 0)
         eyeBreakIn = settings.eyeBreakMinutes * 60
         movementBreakIn = settings.movementBreakMinutes * 60
         start()
@@ -80,6 +85,8 @@ final class BreakEngine: ObservableObject {
             // Away for 5+ minutes: counts as a natural break.
             eyeAccum = 0
             moveAccum = 0
+            nonstopStreak = 0
+            nonstopNudged = false
             refreshCountdowns()
             return
         }
@@ -88,6 +95,26 @@ final class BreakEngine: ObservableObject {
         activeSecondsToday += 1
         eyeAccum += 1
         moveAccum += 1
+
+        // Non-stop input streak: typing/clicking with no real pause (>60s gap
+        // breaks the streak and re-arms the nudge).
+        if idle < 60 {
+            nonstopStreak += 1
+        } else {
+            nonstopStreak = 0
+            nonstopNudged = false
+        }
+        if nonstopStreak > longestNonstopToday {
+            longestNonstopToday = nonstopStreak
+            Store.save(longestNonstopToday, as: "nonstop-\(day)")
+        }
+        if !nonstopNudged, nonstopStreak >= settings.nonstopNudgeMinutes * 60 {
+            nonstopNudged = true
+            Notifications.post(
+                title: "Non-stop for \(settings.nonstopNudgeMinutes) minutes",
+                body: "Typing and clicking without a real pause. Your hands, eyes and brain could use 5.")
+        }
+
         refreshCountdowns()
 
         if eyeAccum >= settings.eyeBreakMinutes * 60 {
@@ -146,6 +173,9 @@ final class BreakEngine: ObservableObject {
         eyeAccum = 0
         moveAccum = 0
         continuousNudged = false
+        nonstopStreak = 0
+        nonstopNudged = false
+        longestNonstopToday = 0
         events = []
         refreshCountdowns()
     }

@@ -80,12 +80,15 @@ private struct TodayView: View {
                 }
 
                 if usage.enabled {
-                    GroupBox("AI time today") {
-                        Text("\(usage.aiMinutesToday) min in AI apps today. Long, late sessions are the pattern to watch — not the minutes themselves.")
+                    GroupBox("AI & coding tools today") {
+                        Text("\(usage.aiMinutesToday) min in AI assistants & coding tools today (ChatGPT, Claude, Codex, Cursor, Windsurf, OpenCode, VS Code…). Long, late sessions are the pattern to watch — not the minutes themselves.")
                             .font(.callout).foregroundColor(.secondary)
                             .padding(4)
                     }
                 }
+
+                Text("Longest non-stop typing/clicking streak today: \(fmt(breaks.longestNonstopToday))")
+                    .font(.caption).foregroundColor(.secondary)
             }
             .padding(16)
         }
@@ -133,6 +136,7 @@ private struct BreakProgressRow: View {
 
 private struct InsightsView: View {
     @EnvironmentObject var feedback: FeedbackStore
+    @EnvironmentObject var eyes: EyeMonitor
     @State private var focus = 3
     @State private var balance = 3
     @State private var note = ""
@@ -169,6 +173,35 @@ private struct InsightsView: View {
                         Text("Check-in saved. Come back tomorrow — trends build over weeks, not days.")
                             .font(.callout).foregroundColor(.secondary).padding(4)
                     }
+                }
+
+                // Eye tracking (blink rate)
+                GroupBox("Eye tracking (blink rate)") {
+                    VStack(alignment: .leading, spacing: 10) {
+                        if eyes.enabled {
+                            HStack(alignment: .firstTextBaseline) {
+                                Text(String(format: "%.0f", eyes.blinksPerMinute))
+                                    .font(.system(size: 40, weight: .thin))
+                                    .monospacedDigit()
+                                Text("blinks/min").foregroundColor(.secondary)
+                                Spacer()
+                                Button("Stop") { eyes.enabled = false }
+                                    .buttonStyle(.bordered)
+                            }
+                            Text(eyes.status).font(.callout).foregroundColor(.secondary)
+                        } else {
+                            Text("True gaze tracking needs dedicated hardware — but your webcam can measure blink rate on-device, and that's the validated eye-strain signal: relaxed blinking (~15–20/min) collapses to ~4–7/min during screen use. Tether nudges you when your rate stays low.")
+                                .font(.callout).foregroundColor(.secondary)
+                            Button("Start eye tracking") { eyes.enabled = true }
+                                .buttonStyle(.borderedProminent)
+                            if !eyes.status.isEmpty, eyes.status != "Off" {
+                                Text(eyes.status).font(.caption).foregroundColor(.secondary)
+                            }
+                        }
+                        Text("Privacy: everything is computed on this Mac — no video is stored or transmitted, and the green camera light stays on while tracking. Never auto-starts.")
+                            .font(.caption).foregroundColor(.secondary)
+                    }
+                    .padding(4)
                 }
 
                 // 7-day trends
