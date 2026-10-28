@@ -1,5 +1,7 @@
 # Tether — macOS Screen Break Reminder, Pomodoro Timer & Buddy Accountability App
 
+▶ **Try the live demo:** https://rtmalikian.github.io/tether/ — static preview with demo data, no backend connected.
+
 [![Build](https://github.com/rtmalikian/tether/actions/workflows/build.yml/badge.svg)](https://github.com/rtmalikian/tether/actions)
 [![Platform](https://img.shields.io/badge/platform-macOS%2013%2B-blue)](https://github.com/rtmalikian/tether)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
